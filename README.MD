@@ -1,25 +1,29 @@
- From https://docs.tuya.com/en/iot/open-api/api-list/api/proprietary-category/universal-infrared?id=K9jgsgd7buln4#title-15-Switch%20TV%20channels
+# What's this?
 
- The combined air conditioner delivery command is mainly related to four states: power mode temp fan
- 1, open the air conditioning command to pass parameters: power = 1, other values are null;
- 2, turn off the air conditioning command pass parameters: power = 0, other values are null;
- 3, control air conditioning mode pass parameters: power = 1, mode = [0 - 4], other values are null;
- 4, control the specific temperature of the air conditioning parameters: power = 1, temp = specific temperature value, other values are null;
- 5, increase the air conditioning temperature parameters: power = 1, temp = 1, other values are null;
- 6, reduce the air conditioning temperature parameters: power = 1, temp = -1, other values are null;
- 7, control air conditioning wind speed parameters: power = 1, fan = [0 - 3], other values are null;
- 8, increase the air conditioning wind speed transmission parameters: power = 1, fan = 100, other values are null;
- 9, reduce the air conditioning wind speed transmission parameters: power = 1, fan = -100, other values are null;
- Modes 0-4 represent: cooling, heating, automatic, air supply, dehumidification
- Wind speed 0-3: automatic, low speed, medium speed, high speed
- Temp = specific temperature value, - > temperature range 16 - 31
+A node cli app to turn on-off and set the temperature on your air conditioner through this IR Remote: https://it.gearbest.com/smart-remote-control/pp_009635988564.html 
 
- example
- {
-  "remote_id": "xxx",
-  "remote_index": "11842",
-  "power": "0",
-  "mode": "0",
-  "temp": "22",
-  "wind": "3"
- }
+# Prerequisites
+- The IR Remote :-)
+- Node.js
+- an account connected to your IR Remote through Tuya app and a developer account (see the readme)
+
+# Usage
+
+1) Create a Developer Account
+    - go to https://iot.tuya.com
+    - follow this guide to create the app and obtain params: https://docs.tuya.com/en/iot/open-api/quick-start/quick-start1?id=K95ztz9u9t89n
+
+2) Install dependencies and config
+    - npm install
+    - cp config.js.example config.js
+    - insert parameters obtained from the "Create Developer Account" step in config.js
+
+3) Enjoy
+    - execute it with `node tuya.js 1 0 22 3`
+    - the parameters are the following:
+         1) Power - 0: off, 1:on
+         2) Mode - 0: cooling, 1: heating, 2: automatic, 3: air supply, 4: dehumidification
+         3) Temperature - range 16-31
+         4) Wind - 0: automatic, 1: low, 2: medium, 3: high
+ 
+ More info from https://docs.tuya.com/en/iot/open-api/api-list/api/proprietary-category/universal-infrared?id=K9jgsgd7buln4#title-15-Switch%20TV%20channels
