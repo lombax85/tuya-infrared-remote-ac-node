@@ -26,4 +26,3 @@ A node cli app to turn on-off and set the temperature on your air conditioner th
          3) Temperature - range 16-31
          4) Wind - 0: automatic, 1: low, 2: medium, 3: high
  
- More info from https://docs.tuya.com/en/iot/open-api/api-list/api/proprietary-category/universal-infrared?id=K9jgsgd7buln4#title-15-Switch%20TV%20channels
