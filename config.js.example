@@ -1,0 +1,10 @@
+const config = {
+    apiURL: 'https://openapi.tuyaus.com',
+    apiKey: '',
+    apiSecret: '',
+    remoteID: '',
+    acID: '',
+    remoteIndex: 11842
+}
+
+module.exports = config;
